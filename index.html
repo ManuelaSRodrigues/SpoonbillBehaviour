@@ -1,0 +1,244 @@
+<html lang="en">
+  <head>
+    <title>Spoonbill behaviour study <hr> tag</title>
+</head>
+  
+  <body>
+
+
+	
+      <center><h1 style="color: darkgreen;"> Where do juvenile spoonbills carry out their daily activities? </h1></center>
+	   <img src="SPOON1.jpg" id="chosenImage" width='700' height ='620'align="right">
+	  <p align="justify" > The maps provided here were produced in the study “The functional role of specific habitats for the daily routine of juvenile spoonbills in protected coastal wetlands” (DOI here). Data presented here originates from 44 juvenile Eurasian spoonbills (Platalea leucorodia) tagged with solar-powered GPS/GSM device containing a 3 axial accelerometer sensor in two Portuguese wetlands, Tagus Estuary and Ria Formosa. We studied their habitat use during their first year of life, using accelerometers (and its calibration; see paper for details) to distinguish the behaviour of the tagged birds.  </p>
+      <p align="justify" > Here we present habitat usage as heatmaps for foraging and non- foraging activities (preening and roosting). </p>
+	  <p align="justify" > Choose the following attributes to generate the desired map. </p>
+ <hr>
+ <h2 style="color: darkgreen;"> Wetland: </h2>
+  <p>
+  <small> Start by choosing the wetland </small>
+  </p>
+    <select id = "choice_wetland">
+      <option value="tagus">Tagus Estuary</option>
+      <option value="ria">Ria Formosa</option>
+    </select>
+
+ <h2 style="color: darkgreen;"> Land use: </h2>
+ <p> 
+   <small> Choose Land use to see only habitat composition based on Corine Land Cover data* (note that Land use does not change with Tidal and Diel categories) or choose Results to see juvenile spoonbills heatmap data.  </small> 
+ </p>
+    <select id = "choice_landuse">
+      <option value="landuse">Land use</option>
+      <option value="results">Results</option>
+    </select>
+    
+<h2 style="color: darkgreen;"> Tidal Stage: </h2>
+<p>
+  <small> Choose the tidal stage </small>
+  </p>
+    <select id = "choice_tide">
+      <option value="high">High tide</option>
+      <option value="ebbing">Ebbing tide</option>
+      <option value="low">Low tide</option>
+      <option value="rising">Rising tide</option>
+    </select>
+
+   <h2 style="color: darkgreen;"> Diel period:</h2>
+   <p>
+  <small> Choose the period of the day </small>
+  </p>
+    <select id = "choice_diel">
+      <option value="sunrise">Sunrise</option>
+      <option value="day">Day</option>
+      <option value="sunset">Sunset</option>
+      <option value="night">Night</option>
+    </select>
+   <h2>  <button  class="green" onclick = "showImage()">Generate</button> </h2>
+    
+	<footer style="background-color: #D3D3D3">
+	<p align="left"> 
+		Manuela S. Rodrigues, P.M. Araújo, J.A. Ramos, P.C. Rodrigues, A.D. Rocha, J.P. Silva,   J.A. Alves (2024)
+		<p>
+		<small> *This publication has been prepared using European Union's Copernicus Land Monitoring Service information; https://doi.org/10.2909/960998c1-1870-4e82-8051-6485205ebbac </small>
+		</p> 
+        <p align="right"> 
+		For more informations read the full article (doi) 
+		</p>  
+     </footer>  
+
+ <style>
+        button {
+            padding: 8px 18px;
+            font-size: 16px;
+            margin-top: 0px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button Styles */
+
+        .green {
+            background-color: darkgreen;
+            color: #fff;
+        }
+
+        /* Hover Styles */
+        button:hover {
+            background-color: #616161;
+        }
+    </style>
+	   
+   <script>
+      function showImage() {
+        var choice_wetland = document.getElementById("choice_wetland");
+        var imagewetland = choice_wetland.options[choice_wetland.selectedIndex].value;
+		var choice_landuse = document.getElementById("choice_landuse");
+        var imagelanduse= choice_landuse.options[choice_landuse.selectedIndex].value;
+		var choice_tide = document.getElementById("choice_tide");
+        var imagetide= choice_tide.options[choice_tide.selectedIndex].value;
+		var choice_diel = document.getElementById("choice_diel");
+        var imagediel= choice_diel.options[choice_diel.selectedIndex].value;
+		
+				
+		
+   if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="sunrise"){
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="day") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="sunset") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="night") {
+          image = 'tagus_clc.jpg';
+		   } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="sunrise") {
+          image = 'tagus_clc.jpg'; 
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="day") {
+          image = 'tagus_clc.jpg'; 
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="sunset") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="night") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="sunrise") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="day") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="sunset") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="night") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="sunrise") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="day") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="sunset") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="night") {
+          image = 'tagus_clc.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="high" && imagediel=="sunrise") {
+          image = 'tagus_high_sunrise.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="high" && imagediel=="day") {
+          image = 'tagus_high_day.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="high" && imagediel=="sunset") {
+          image = 'tagus_high_sunset.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="high" && imagediel=="night") {
+          image = 'tagus_high_night.jpg';
+		   } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="sunrise") {
+          image = 'tagus_ebbing_sunrise.jpg'; 
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="day") {
+          image = 'tagus_ebbing_day.jpg'; 
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="sunset") {
+          image = 'tagus_ebbing_sunset.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="night") {
+          image = 'tagus_ebbing_night.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="low" && imagediel=="sunrise") {
+          image = 'tagus_low_sunrise.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="low" && imagediel=="day") {
+          image = 'tagus_low_day.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="low" && imagediel=="sunset") {
+          image = 'tagus_low_sunset.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="low" && imagediel=="night") {
+          image = 'tagus_low_night.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="rising" && imagediel=="sunrise") {
+          image = 'tagus_rising_sunrise.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="rising" && imagediel=="day") {
+          image = 'tagus_rising_day.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="rising" && imagediel=="sunset") {
+          image = 'tagus_rising_sunset.jpg';
+		  } else if (imagewetland == "tagus" && imagelanduse == "results" && imagetide=="rising" && imagediel=="night") {
+          image = 'tagus_rising_night.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="sunrise") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="day") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="sunset") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="high" && imagediel=="night") {
+          image = 'ria_clc.jpg';
+		   } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="sunrise") {
+          image = 'ria_clc.jpg'; 
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="day") {
+          image = 'ria_clc.jpg'; 
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="sunset") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="ebbing" && imagediel=="night") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="sunrise") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="day") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="sunset") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="low" && imagediel=="night") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="sunrise") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="day") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="sunset") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "landuse" && imagetide=="rising" && imagediel=="night") {
+          image = 'ria_clc.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="high" && imagediel=="sunrise") {
+          image = 'ria_high_sunrise.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="high" && imagediel=="day") {
+          image = 'ria_high_day.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="high" && imagediel=="sunset") {
+          image = 'ria_high_sunset.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="high" && imagediel=="night") {
+          image = 'ria_high_night.jpg';
+		   } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="sunrise") {
+          image = 'ria_ebbing_sunrise.jpg'; 
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="day") {
+          image = 'ria_ebbing_day.jpg'; 
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="sunset") {
+          image = 'ria_ebbing_sunset.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="ebbing" && imagediel=="night") {
+          image = 'ria_ebbing_night.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="low" && imagediel=="sunrise") {
+          image = 'ria_low_sunrise.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="low" && imagediel=="day") {
+          image = 'ria_low_day.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="low" && imagediel=="sunset") {
+          image = 'ria_low_sunset.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="low" && imagediel=="night") {
+          image = 'ria_low_night.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="rising" && imagediel=="sunrise") {
+          image = 'ria_rising_sunrise.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="rising" && imagediel=="day") {
+          image = 'ria_rising_day.jpg';
+		  } else if (imagewetland == "ria" && imagelanduse == "results" && imagetide=="rising" && imagediel=="sunset") {
+          image = 'ria_rising_sunset.jpg';
+		  } else {
+           image = "ria_rising_sunset.jpg";
+		   }
+           document.getElementById("chosenImage").src = image;
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+    
